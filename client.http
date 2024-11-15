@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:3333
+
+
+POST {{baseUrl}}/account
+Content-Type: application/json
+
+{
+    "name": "Bryan",
+    "cpf": "151548945465",
+    "password": "123456"
+}

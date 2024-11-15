@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum shipmentRole {
+  DELIVERED
+  PENDING
+  IN_TRANSIT
+  RETURNED
+}
+
+model Admin {
+  id       String @id @default(uuid())
+  name     String
+  password String
+}
+
+model Picture {
+  id         String     @id @default(uuid())
+  fileName   String
+  fileType   String
+  body       String
+  shipmentId String?
+  url        String
+  Shipment   Shipment[]
+}
+
+model MailMan {
+  id       String     @id @default(uuid())
+  name     String
+  cpf      String
+  password String
+  contact  String?
+  position String     @default("mail")
+  shipment Shipment[]
+}
+
+model Shipment {
+  id          String       @id @default(uuid())
+  addresse    String
+  recipientId String       @unique @map("recipient_id")
+  status      shipmentRole @default(IN_TRANSIT)
+  MailMan     MailMan?     @relation(fields: [mailManId], references: [id])
+  mailManId   String?
+  picture     Picture      @relation(fields: [pictureId], references: [id])
+  pictureId   String
+  Recipient   Recipient    @relation(fields: [recipientId], references: [id])
+}
+
+model Recipient {
+  id       String     @id @default(uuid())
+  name     String
+  email    String
+  cpf      String
+  password String
+  shipment Shipment[]
+}
