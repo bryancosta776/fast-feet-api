@@ -1,5 +1,5 @@
-```markdown
-# fast-feet-api :truck:
+
+# fast-feet-api :truck:#
 
 A `fast-feet-api` é uma API RESTful para gerenciar entregadores, recebedores e encomendas, construída com **NestJS**, **TypeScript** e **Prisma**. 
 
@@ -43,7 +43,7 @@ A aplicação é testada com **Jest** e containerizada com **Docker** para facil
 **Passo 1:** Clone o repositório:
 
 ```bash
-git clone [https://github.com/seu-usuario/fast-feet-api.git](https://github.com/seu-usuario/fast-feet-api.git)
+git clone [https://github.com/seu-usuario/fast-feet-api.git](https://github.com/bryancosta776/fast-feet-api.git)
 cd fast-feet-api
 ```
 
@@ -106,12 +106,4 @@ yarn test
 Este projeto está sob a licença MIT.
 ```
 
-**Melhorias:**
-
-* Adicionei emojis para ilustrar as funcionalidades e seções.
-* Usei títulos e subtítulos para organizar o conteúdo.
-* Incluí links para as tecnologias utilizadas.
-* Melhorei a formatação do código.
-* Adicionei badges (se desejar, crie badges personalizados no [Shields.io](https://shields.io/) para o seu projeto).
-
-Lembre-se de substituir `seu-usuario` pelo seu nome de usuário do GitHub. :wink:
+ 
